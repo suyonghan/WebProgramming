@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2><p id="time_result"></p></h2>
+	<button type="button" onclick="changeRed()">빨간색</button>
+	<button type="button" onclick="changeBlue()">파란색</button>
+	<button type="button" onclick="changeGreen()">초록색</button>
+	<script>
+		var d = new Date();
+		var currentDate = d.getFullYear() + "년" + (d.getMonth()) + "월"
+				+ d.getDate() + "일입니다";
+		document.getElementById("time_result").innerHTML = "오늘은" + currentDate;
+		function changeRed() {
+			var x = document.getElementById("time_result");
+			x.style.color = "red";
+		}
+		function changeGreen() {
+			var x = document.getElementById("time_result");
+			x.style.color = "green";
+		}
+		function changeBlue() {
+			var x = document.getElementById("time_result");
+			x.style.color = "blue";
+		}
+	</script>
+</body>
+</html>
