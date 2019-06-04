@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick='image_click()'>click here</button>
+	<image name="target"></image>
+	<script>
+		function image_click() {
+			var imageSrc = "https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704__340.jpg";
+			if (imageSrc == document.target.src)
+				document.target.src = "";
+			else
+				document.target.src = imageSrc;
+		}
+	</script>
+</body>
+</html>

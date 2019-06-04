@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#header {
+	margin: auto;
+}
+
+#main {
+	border: 3px solid blue;
+	text-align: center;
+}
+
+#result {
+	margin: auto;
+}
+</style>
+</head>
+<body>
+	<div id='main'>
+		<header id="header">
+			<h2>구구단</h2>
+		</header>
+		<br>
+		<button id='1'>1단</button>
+		<button id='2'>2단</button>
+		<button id='3'>3단</button>
+		<button id='4'>4단</button>
+		<button id='5'>5단</button>
+		<button id='6'>6단</button>
+		<button id='7'>7단</button>
+		<button id='8'>8단</button>
+		<button id='9'>9단</button>
+		<br>
+
+		<h5 id='result'></h5>
+	</div>
+	<script>
+		function gugu1() {
+			var result = "";
+			for (var i = 1; i <= 9; ++i) {
+				result += 1 + " * " + i + " = " + (1 * i) + "<br>";
+			}
+			document.getElementById("result").innerHTML = result;
+		};
+		function gugu2() {
+			var result = "";
+			for (var i = 1; i <= 9; ++i) {
+				result += 2 + " * " + i + " = " + (2 * i) + "<br>";
+			}
+			document.getElementById("result").innerHTML = result;
+		};
+		function gugu3() {
+			var result = "";
+			for (var i = 1; i <= 9; ++i) {
+				result += 3 + " * " + i + " = " + (3 * i) + "<br>";
+			}
+			document.getElementById("result").innerHTML = result;
+		};
+		function gugu4() {
+			var result = "";
+			for (var i = 1; i <= 9; ++i) {
+				result += 4 + " * " + i + " = " + (4 * i) + "<br>";
+			}
+			document.getElementById("result").innerHTML = result;
+		};
+		function gugu5() {
+			var result = "";
+			for (var i = 1; i <= 9; ++i) {
+				result += 5 + " * " + i + " = " + (5 * i) + "<br>";
+			}
+			document.getElementById("result").innerHTML = result;
+		};
+		function gugu6() {
+			var result = "";
+			for (var i = 1; i <= 9; ++i) {
+				result += 6 + " * " + i + " = " + (6 * i) + "<br>";
+			}
+			document.getElementById("result").innerHTML = result;
+		};
+		function gugu7() {
+			var result = "";
+			for (var i = 7; i <= 9; ++i) {
+				result += 7 + " * " + i + " = " + (7 * i) + "<br>";
+			}
+			document.getElementById("result").innerHTML = result;
+		};
+		function gugu8() {
+			var result = "";
+			for (var i = 1; i <= 9; ++i) {
+				result += 8 + " * " + i + " = " + (8 * i) + "<br>";
+			}
+			document.getElementById("result").innerHTML = result;
+		};
+		function gugu8() {
+			var result = "";
+			for (var i = 1; i <= 9; ++i) {
+				result += 9 + " * " + i + " = " + (9 * i) + "<br>";
+			}
+			document.getElementById("result").innerHTML = result;
+		};
+		var btn1 = document.getElementById('1');
+		var btn2 = document.getElementById('2');
+		var btn3 = document.getElementById('3');
+		var btn4 = document.getElementById('4');
+		var btn5 = document.getElementById('5');
+		var btn6 = document.getElementById('6');
+		var btn7 = document.getElementById('7');
+		var btn8 = document.getElementById('8');
+		var btn9 = document.getElementById('9');
+		btn1.addEventListener('click', gugu1);
+		btn2.addEventListener('click', gugu2);
+		btn3.addEventListener('click', gugu3);
+		btn4.addEventListener('click', gugu4);
+		btn5.addEventListener('click', gugu5);
+		btn6.addEventListener('click', gugu6);
+		btn7.addEventListener('click', gugu7);
+		btn8.addEventListener('click', gugu8);
+		btn9.addEventListener('click', gugu9);
+	</script>
+</body>
+</html>

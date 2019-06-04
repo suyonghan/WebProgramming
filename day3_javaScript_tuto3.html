@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#header {
+	margin: auto;
+}
+
+#main {
+	border: 3px solid blue;
+	text-align: center;
+}
+
+#result {
+	margin: auto;
+}
+</style>
+</head>
+<body>
+	<script>
+		function gugu(num) {
+			var result = "";
+			for (var i = 1; i <= 9; ++i) {
+				result += num + " * " + i + " = " + (num * i) + "<br>";
+			}
+			document.getElementById("result").innerHTML = result;
+		}
+	</script>
+	<div id='main'>
+		<header id="header">
+			<h2>구구단</h2>
+		</header>
+		<br>
+		<button id='1' onclick='gugu(1)'>1단</button>
+		<button id='2' onclick='gugu(2)'>2단</button>
+		<button id='3' onclick='gugu(3)'>3단</button>
+		<button id='4' onclick='gugu(4)'>4단</button>
+		<button id='5' onclick='gugu(5)'>5단</button>
+		<button id='6' onclick='gugu(6)'>6단</button>
+		<button id='7' onclick='gugu(7)'>7단</button>
+		<button id='8' onclick='gugu(8)'>8단</button>
+		<button id='9' onclick='gugu(9)'>9단</button>
+		<br>
+
+		<h5 id='result'></h5>
+	</div>
+</body>
+</html>
