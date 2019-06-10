@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>오늘의 날씨 정보</h1>
+	<hr>
+	<div id='time'></div>
+	<script>
+		var request;
+		window.onload = new function() {
+			request = new XMLHttpRequest();
+			if (!request) {
+				alert('XMLHTTP 인스턴스를 만들 수가 없어요 ㅠㅠ');
+				return false;
+			}
+			request.onreadystatechange = function() {
+					if (request.readyState == 4 && request.status == 200) {
+						var result = JSON.parse(request.responseText);
+						document.body.innerHTML += "기준 시간 : " + result.time + "<br> 기온" + 
+						result.temp + "도 <br><img src = ../" + result.img + ">";
+					}
+			}
+			request.open("GET", "/web_tuto/ajaxexam/content/weather.jsp", true);
+			request.send();
+		}
+	</script>
+</body>
+</html>
