@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+img {
+	opacity: 0.4;
+}
+</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><img id="0"
+				src='http://poooo.ml/data/editor/1810/aa7462a202b36ecf40db2f8e44d4f594_1539011087_018.gif'></td>
+			<td><img id="1"
+				src='http://poooo.ml/data/editor/1810/aa7462a202b36ecf40db2f8e44d4f594_1539011087_018.gif'></td>
+			<td><img id="2"
+				src='http://poooo.ml/data/editor/1810/aa7462a202b36ecf40db2f8e44d4f594_1539011087_018.gif'></td>
+			<td><img id="3"
+				src='http://poooo.ml/data/editor/1810/aa7462a202b36ecf40db2f8e44d4f594_1539011087_018.gif'></td>
+			<td><img id="4"
+				src='http://poooo.ml/data/editor/1810/aa7462a202b36ecf40db2f8e44d4f594_1539011087_018.gif'></td>
+		</tr>
+		<tr>
+			<td><img id="5"
+				src='http://poooo.ml/data/editor/1810/aa7462a202b36ecf40db2f8e44d4f594_1539011087_018.gif'></td>
+			<td><img id="6"
+				src='http://poooo.ml/data/editor/1810/aa7462a202b36ecf40db2f8e44d4f594_1539011087_018.gif'></td>
+			<td><img id="7"
+				src='http://poooo.ml/data/editor/1810/aa7462a202b36ecf40db2f8e44d4f594_1539011087_018.gif'></td>
+			<td><img id="8"
+				src='http://poooo.ml/data/editor/1810/aa7462a202b36ecf40db2f8e44d4f594_1539011087_018.gif'></td>
+			<td><img id="9"
+				src='http://poooo.ml/data/editor/1810/aa7462a202b36ecf40db2f8e44d4f594_1539011087_018.gif'></td>
+		</tr>
+	</table>
+	<button id="first">
+		<strong>모두 진하게</strong>
+	</button>
+	<button id="second">
+		<strong>모두 반투명하게</strong>
+	</button>
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script>
+		var imgArray = new Array(10);
+		for (var i = 0; i < 10; i++) {
+			imgArray[i] = $("img[id^='" + i + "']");
+		}
+
+		$.each(imgArray, function(index, item) {
+			$(item).click(function() {
+				$(item).css('opacity', 1);
+			});
+		})
+
+		$("button[id^='first']").click(function() {
+			$("img").css('opacity', 1);
+		})
+		$("button[id^='second']").click(function() {
+			$("img").css('opacity', 0.4);
+		})
+	</script>
+</body>
+</html>
+
