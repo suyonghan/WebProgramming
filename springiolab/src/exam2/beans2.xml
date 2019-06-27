@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="bean1" class="exam2.Homework" c:homeworkName="국어" />
+	<bean id="bean2" class="exam2.Homework" c:homeworkName="영어" />
+	<bean id="bean3" class="exam2.Homework" c:homeworkName="수학" />
+	<bean id="homework_b1" class="exam2.Student" p:myHomework="bean1"
+		p:name="둘리" />
+	<bean id="homework_b2" class="exam2.Student" p:myHomework="bean2"
+		p:name="또치" />
+	<bean id="homework_b3" class="exam2.Student" p:myHomework="bean3"
+		p:name="도우너" />
+</beans>
+
+
+
+
+
+
