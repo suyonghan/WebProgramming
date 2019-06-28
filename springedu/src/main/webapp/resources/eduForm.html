@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+	border: 1px dashed;
+	margin: auto;
+	width: 500px;
+	height: 300px;
+	border-radius: 2em;
+	border-top-left-radius: 2em;
+	border-top-right-radius: 2em;
+	border-bottom-left-radius: 2em;
+	border-bottom-right-radius: 2em;
+	background: radial-gradient(red, green, yellow);
+	padding-left: 10px
+}
+</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<form method="get" action="/springedu/eduForm">
+			<h1>
+				<strong>성적을 입력하세요</strong>
+			</h1>
+			<hr>
+			이름 : <input type="text" name="name"><br> 평균점수 : <input
+				type="text" name="score"><br>
+			<br> <input type="submit" value="전송"> <input
+				type="reset" value="재작성">
+		</form>
+	</div>
+</body>
+</html>
