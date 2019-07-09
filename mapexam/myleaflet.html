@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.7.js"></script>
+<link rel="stylesheet"
+	href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+	integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+	crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+	integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+	crossorigin=""></script>
+</head>
+<body>
+	<h1>집과 학교</h1>
+	<button onclick="addToCoord('하남시 미사강변한강로 한신휴플러스', '집');">우리 집</button>
+	<button onclick="addToCoord('불암초등학교', '학교');">우리 학교</button>
+	<hr>
+	<div id="mapid" style="width: 600px; height: 400px;"></div>
+	<script>
+	//var mymap = L.map('mapid');
+	var mymap; 
+	function addToCoord(address, location) {
+		var lat;
+		var lng;
+		
+		if (arguments[0]) {			
+			$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyD-nx_y7aBlJgfgVZRaIwMbnShQJsxpryY&address="+encodeURIComponent(arguments[0]), function(data) {
+				lat = data.results[0].geometry.location.lat;
+				lng = data.results[0].geometry.location.lng;
+				if(mymap)
+					mymap.remove();
+				mymap = L.map('mapid').setView([lat, lng], 16)
+				L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+					maxZoom: 18,
+					attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+						'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+						'Imagery <a href="https://www.mapbox.com/">Mapbox</a>',
+					id: 'mapbox.streets'
+				}).addTo(mymap);
+
+				if(location == '집'){
+					var myIcon = L.icon({
+					    iconUrl: 'https://previews.123rf.com/images/jovanas/jovanas1612/jovanas161200777/68255869-%EC%A7%91-%EC%95%84%EC%9D%B4%EC%BD%98-%EC%A7%91-%EC%95%84%EC%9D%B4%EC%BD%98.jpg',
+					    iconSize: [30, 50]
+					});
+					L.marker([lat, lng], {icon: myIcon}).addTo(mymap)
+					.bindPopup("<b>여기는 나의 집입니다.").openPopup();
+					
+					L.circle([data.results[0].geometry.location.lat, data.results[0].geometry.location.lng], 50, {
+						color: 'red',
+						fillColor: '#f03',
+						fillOpacity: 0.4
+					}).addTo(mymap).bindPopup("나는 원!");
+				}
+				else if(location == '학교'){
+					var myIcon = L.icon({
+					    iconUrl: 'https://previews.123rf.com/images/friendlyvector/friendlyvector1608/friendlyvector160800009/63252460-%ED%95%99%EA%B5%90-%EA%B1%B4%EB%AC%BC%EC%9E%85%EB%8B%88%EB%8B%A4-%ED%95%99%EA%B5%90%EC%97%90-%EC%98%A4%EC%8B%A0-%EA%B2%83%EC%9D%84-%ED%99%98%EC%98%81%ED%95%A9%EB%8B%88%EB%8B%A4-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4-%EC%85%98.jpg',
+					    iconSize: [30, 50]
+					});
+
+					L.marker([lat, lng], {icon: myIcon}).addTo(mymap)
+						.bindPopup("<b>여기는 나의 학교입니다.").openPopup();
+					
+					L.circle([data.results[0].geometry.location.lat, data.results[0].geometry.location.lng], 50, {
+						color: 'blue',
+						fillColor: '#f04',
+						fillOpacity: 0.4
+					}).addTo(mymap).bindPopup("나는 원!");
+				}
+			});
+		}		
+	}
+	</script>
+</body>
+</html>
